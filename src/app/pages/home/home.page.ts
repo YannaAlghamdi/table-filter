@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
+
+  ionViewWillEnter() {
+    this.dataService.getData().subscribe(data => console.log(data));
+  }
 
 }
