@@ -1,7 +1,18 @@
 .ngx-datatable.material {
   .datatable-header {
     .datatable-header-cell {
-      text-transform: capitalize;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #000;
     }
   }
+}
+
+.datatable-body-row.active .datatable-row-group {
+  background-color: #08a7d3 !important;
+  color: #fff;
+}
+
+* {
+  font-family: "Poppins Regular";
 }

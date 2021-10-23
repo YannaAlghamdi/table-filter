@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ColumnMode } from '@swimlane/ngx-datatable';
+import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class IndexPage implements OnInit {
   private columns: any;
   private rows: any;
   private columnMode: ColumnMode;
+  private selectionType: SelectionType;
 
   constructor(private dataService: DataService) { }
 
@@ -22,6 +23,7 @@ export class IndexPage implements OnInit {
       console.log(this.rows);
     });
     this.columnMode = ColumnMode.force;
+    this.selectionType = SelectionType.single;
   }
 
   generateColumns(columns: Array<string>) {
