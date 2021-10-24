@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-grid class="ion-margin ion-padding">
+    <ion-row class="ion-margin ion-padding">
+      <ion-col>
+        <ngx-datatable
+        class="material"
+        [rows]="rows"
+        [columns]="columns"
+        [columnMode]="columnMode"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        rowHeight="50"
+        [limit]="15"
+        [selectionType]="selectionType"
+        [scrollbarH]="true"
+      >
+      </ngx-datatable>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
