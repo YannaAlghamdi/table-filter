@@ -9,11 +9,14 @@
       <ion-list>
         <ion-item class="filter">
           <span><ion-icon name="filter-outline"></ion-icon> Filters</span>
-          <small><ion-icon name="trash-outline"></ion-icon> Clear Filters</small>
+          <small class="action" (click)="clearFilters()"><ion-icon name="trash-outline"></ion-icon> Clear Filters</small>
         </ion-item>
-        <app-filter [fields]=columns></app-filter>
+        <app-filter *ngFor="let filter of initialFilters" (addFilter)="addedFilter($event)" [fields]=columns></app-filter>
+        <ion-item (click)="addInitialFilter()" lines="none">
+          <small class="action"><ion-icon name="add-outline"></ion-icon>Add Filter</small>
+        </ion-item>
         <ion-item lines="none">
-          <small><ion-icon name="add-outline"></ion-icon>Add Filter</small>
+          <ion-button (click)="applyFilters()" [disabled]="filters?.length === 0" class="filter-btn">Apply</ion-button>
         </ion-item>
       </ion-list>
     </ion-content>

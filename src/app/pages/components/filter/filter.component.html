@@ -15,4 +15,7 @@
     <ion-label class="value">Value</ion-label>
     <ion-input formControlName="value"></ion-input>
   </ion-item>
+  <ion-item lines="none">
+    <ion-button [disabled]="!form.valid || added" (click)="add()" class="filter-btn" expand="block">Add Filter</ion-button>
+  </ion-item>
 </div>

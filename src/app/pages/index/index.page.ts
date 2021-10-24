@@ -15,26 +15,27 @@ export class IndexPage implements OnInit {
   private columnMode: ColumnMode;
   private selectionType: SelectionType;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+
+  }
 
   ngOnInit() {
-    this.dataService.getData().subscribe(data => {
-      this.generateColumns(data.getColumns());
-      this.rows = data.getResults();
-      console.log(this.rows);
-    });
     this.columnMode = ColumnMode.force;
     this.selectionType = SelectionType.single;
+    this.dataService.data$.subscribe(data => {
+      this.generateColumns(data?.getColumns());
+      this.rows = data?.getResults();
+    });
+    this.dataService.get();
   }
 
   generateColumns(columns: Array<Column>) {
     this.columns = new Array();
-    columns.forEach(item => {
+    columns?.forEach(item => {
       this.columns.push({
-        name: item.getName().replace('_', ' '),
-        prop: item.getName()
+        name: item?.getName()?.replace('_', ' '),
+        prop: item?.getName()
       });
     });
   }
-
 }

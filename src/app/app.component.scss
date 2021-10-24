@@ -1,5 +1,5 @@
 * {
-  font-family: "Poppins Regular";
+  font-family: "Poppins Regular" !important;
 }
 
 ion-toolbar,
@@ -24,6 +24,15 @@ ion-toolbar {
   --background: #3346d4;
 }
 
+.filter-btn {
+  width: 100%;
+  font-size: 1rem;
+  --background: #3346d4;
+  font-weight: bold;
+  height: 2.5rem;
+  --box-shadow: 0 0 black;
+}
+
 ion-content {
   --background: transparent;
   --ion-item-background: transparent;
@@ -45,4 +54,13 @@ ion-list ion-item {
 
 ion-select {
   font-size: 0.75rem;
+}
+
+.action {
+  cursor: pointer;
+}
+
+.action:hover,
+:active {
+  text-decoration: underline;
 }
