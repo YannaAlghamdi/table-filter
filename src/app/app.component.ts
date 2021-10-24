@@ -31,6 +31,17 @@ export class AppComponent implements OnInit {
     this.filters.push(event);
   }
 
+  removedFilter(event: number) {
+    this.initialFilters.splice(event, 1);
+    const filter = this.filters.find(f => f.getIndex() === event);
+    this.filters.splice(this.filters.indexOf(filter), 1);
+    if(this.filters.length > 0) {
+      this.applyFilters();
+    } else {
+      this.clearFilters();
+    }
+  }
+
   addInitialFilter() {
     this.initialFilters.push(new Filter());
   }

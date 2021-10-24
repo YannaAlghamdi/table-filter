@@ -35,3 +35,9 @@ ion-input {
   --box-shadow: 0 0 black;
   --background: #3346d4;
 }
+
+.remove-btn {
+  width: 100%;
+  --box-shadow: 0 0 black;
+  --background: var(--ion-color-danger);
+}

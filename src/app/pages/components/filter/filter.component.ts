@@ -11,7 +11,10 @@ import { Operator } from 'src/app/models/operator';
 })
 export class FilterComponent implements OnInit {
   @Input() fields: Array<Column>;
+  @Input() index: number;
   @Output() addFilter: EventEmitter<Filter> = new EventEmitter();
+  @Output() removeFilter: EventEmitter<number> = new EventEmitter();
+
   private added: boolean;
   private operators: Array<Operator>;
   private form: FormGroup;
@@ -42,9 +45,14 @@ export class FilterComponent implements OnInit {
     this.filter = new Filter()
       .withField(this.form.get('field').value)
       .withOperator(this.form.get('operator').value)
-      .withValue(this.form.get('value').value);
+      .withValue(this.form.get('value').value)
+      .withIndex(this.index);
     this.addFilter.emit(this.filter);
     this.added = true;
+  }
+
+  remove() {
+    this.removeFilter.emit(this.index);
   }
 
 }

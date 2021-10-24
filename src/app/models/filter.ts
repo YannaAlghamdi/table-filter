@@ -4,6 +4,7 @@ export class Filter {
   private field: string;
   private operator: Operator;
   private value: string | number;
+  private index: number;
 
   static addCondition(filter: Filter) {
     switch(filter.getOperator()) {
@@ -38,6 +39,9 @@ export class Filter {
 
   public getValue(): string | number { return this.value; }
   public withValue(arg: string | number) { this.value = arg; return this; }
+
+  public getIndex(): number { return this.index; }
+  public withIndex(arg: number) { this.index = arg; return this; }
 
 
 }

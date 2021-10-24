@@ -11,7 +11,7 @@
           <span><ion-icon name="filter-outline"></ion-icon> Filters</span>
           <small class="action" (click)="clearFilters()"><ion-icon name="trash-outline"></ion-icon> Clear Filters</small>
         </ion-item>
-        <app-filter *ngFor="let filter of initialFilters" (addFilter)="addedFilter($event)" [fields]=columns></app-filter>
+        <app-filter *ngFor="let filter of initialFilters; let i=index" [index]="i" (addFilter)="addedFilter($event)" (removeFilter)="removedFilter($event)" [fields]=columns></app-filter>
         <ion-item (click)="addInitialFilter()" lines="none">
           <small class="action"><ion-icon name="add-outline"></ion-icon>Add Filter</small>
         </ion-item>
