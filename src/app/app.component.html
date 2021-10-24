@@ -1,3 +1,26 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu type="push" side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Tools</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item class="filter">
+          <span><ion-icon name="filter-outline"></ion-icon> Filters</span>
+          <small class="action" (click)="clearFilters()"><ion-icon name="trash-outline"></ion-icon> Clear Filters</small>
+        </ion-item>
+        <app-filter *ngFor="let filter of initialFilters; let i=index" [index]="i" (addFilter)="addedFilter($event)" (removeFilter)="removedFilter($event)" [fields]=columns></app-filter>
+        <ion-item (click)="addInitialFilter()" lines="none">
+          <small class="action"><ion-icon name="add-outline"></ion-icon>Add Filter</small>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button (click)="applyFilters()" [disabled]="filters?.length === 0" class="filter-btn">Apply</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

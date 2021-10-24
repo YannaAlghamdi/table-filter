@@ -1,0 +1,66 @@
+* {
+  font-family: "Poppins Regular" !important;
+}
+
+ion-toolbar,
+ion-menu,
+ion-item {
+  --color: #272829;
+}
+
+ion-title {
+  color: #fff;
+}
+
+ion-menu {
+  --background: #fff;
+}
+
+ion-item {
+  --background: transparent;
+}
+
+ion-toolbar {
+  --background: #3346d4;
+}
+
+.filter-btn {
+  width: 100%;
+  font-size: 1rem;
+  --background: #3346d4;
+  font-weight: bold;
+  height: 2.5rem;
+  --box-shadow: 0 0 black;
+}
+
+ion-content {
+  --background: transparent;
+  --ion-item-background: transparent;
+}
+
+ion-list ion-item {
+  font-size: 1rem;
+}
+
+.filter {
+  span,
+  small {
+    width: 100%;
+  }
+  small {
+    text-align: right;
+  }
+}
+
+ion-select {
+  font-size: 0.75rem;
+}
+
+.action {
+  cursor: pointer;
+}
+
+.action:hover,
+:active {
+  text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+<div [formGroup]="form" class="filter-item">
+  <ion-item lines="none">
+    <ion-label>Field</ion-label>
+    <ion-select (ionChange)="onFieldChange()" formControlName="field" interface="popover" placeholder="Select one">
+      <ion-select-option *ngFor="let field of fields">{{field.getName()}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>Operator</ion-label>
+    <ion-select formControlName="operator" interface="popover" placeholder="Select one">
+      <ion-select-option *ngFor="let op of operators">{{op}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="value">Value</ion-label>
+    <ion-input formControlName="value"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-button [disabled]="!form.valid || added" (click)="add()" class="filter-btn" expand="block">Add</ion-button>
+    <ion-button (click)="remove()" class="remove-btn" expand="block">Remove</ion-button>
+  </ion-item>
+</div>
