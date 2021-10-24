@@ -2,6 +2,18 @@
 
 A table filter application that displays a table view for a data set and allows for the use of user-defined filters.
 
+## Some notes
+
+- This app is using the ngx-datatable library. It has features to display data in a table (pagination, sort, selection, etc.). (See: https://swimlane.github.io/ngx-datatable/)
+- Why Ionic Framework?
+  - good UI/UX, easy-to-use components
+  - has built-in UI features
+  - simple and easy to use
+- Improvements:
+  - currently, `remove filter` is not working properly
+  - cosmetic issues: improve sidebar menu, add more filters
+  - add tests
+
 ## Technologies Used
 
 - Angular 12
