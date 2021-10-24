@@ -1,0 +1,31 @@
+* {
+  font-family: "Poppins Regular";
+}
+
+.filter-item {
+  margin: 1rem;
+  background: #f5f5fb;
+  border-radius: 0.5rem;
+}
+
+ion-select,
+ion-input {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+ion-label {
+  color: #778dad !important;
+  font-size: 0.8rem !important;
+  font-weight: bold;
+}
+
+ion-input {
+  background: #fff;
+  --padding-end: 0.5rem;
+  height: 2rem;
+}
+
+.value {
+  padding-right: 2rem;
+}

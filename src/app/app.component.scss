@@ -1,0 +1,48 @@
+* {
+  font-family: "Poppins Regular";
+}
+
+ion-toolbar,
+ion-menu,
+ion-item {
+  --color: #272829;
+}
+
+ion-title {
+  color: #fff;
+}
+
+ion-menu {
+  --background: #fff;
+}
+
+ion-item {
+  --background: transparent;
+}
+
+ion-toolbar {
+  --background: #3346d4;
+}
+
+ion-content {
+  --background: transparent;
+  --ion-item-background: transparent;
+}
+
+ion-list ion-item {
+  font-size: 1rem;
+}
+
+.filter {
+  span,
+  small {
+    width: 100%;
+  }
+  small {
+    text-align: right;
+  }
+}
+
+ion-select {
+  font-size: 0.75rem;
+}

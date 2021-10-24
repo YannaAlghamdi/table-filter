@@ -1,3 +1,7 @@
+* {
+  font-family: "Poppins Regular";
+}
+
 .ngx-datatable.material {
   .datatable-header {
     .datatable-header-cell {
@@ -8,11 +12,15 @@
   }
 }
 
-.datatable-body-row.active .datatable-row-group {
-  background-color: #08a7d3 !important;
-  color: #fff;
+ion-toolbar {
+  --background: #3346d4;
 }
 
-* {
-  font-family: "Poppins Regular";
+.datatable-body-row.active .datatable-row-group {
+  background-color: #c7c7c9 !important;
+  color: #fff !important;
+}
+
+ion-content {
+  --background: #eef2fd;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
+import { Column } from 'src/app/models/column';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -26,12 +27,12 @@ export class IndexPage implements OnInit {
     this.selectionType = SelectionType.single;
   }
 
-  generateColumns(columns: Array<string>) {
+  generateColumns(columns: Array<Column>) {
     this.columns = new Array();
     columns.forEach(item => {
       this.columns.push({
-        name: item.replace('_', ' '),
-        prop: item
+        name: item.getName().replace('_', ' '),
+        prop: item.getName()
       });
     });
   }
